@@ -1,0 +1,220 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    background-color: #F2F6FA;
+    color: #26364a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header
+{
+    background-color: #102b46;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1
+{
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+header p
+{
+    color: #d9e8f7;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+nav
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav button
+{
+    background-color: #ffffff;
+    color: #183D67;
+    border: 2px solid #E5EFFB;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover
+{
+    background-color: #1769aa;
+    color: #ffffff;
+    border-color: #1769aa;
+}
+
+nav button.activo
+{
+    background-color: #1769aa;
+    color: #ffffff;
+    border-color: #1769aa;
+}
+
+/*CONTENIDO*/
+main
+{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 35px 4%;
+    flex: 1;
+}
+
+main h2
+{
+    color: #102b46;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*SECCIONES DECRIPCION*/
+
+main section > p 
+{
+    color: #52647a;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+/*BUSQUEDA Y FILTROS*/
+
+.controlesExplorar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.controlesExplorar input, .controlesExplorar select, .controlesComparar select
+{
+    background-color: #E5EFFB;
+    color: #26364a;
+    border: 1px solid#d1dfed;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+.controlesExplorar input
+{
+    width: 320px;
+    max-width: 100%;
+}
+
+.controlesExplorar input:focus, .controlesExplorar select:focus, .controlesComparar select:focus
+{
+    border-color: #1769aa;
+    background-color: #ffffff;
+}
+
+.controlesExplorar innput::placeholder
+{
+    color: #65758b;
+}
+
+/*CONTADOR PAISES*/
+#contadorPaises
+{
+    color: #52647a;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+/*FOOTET*/
+footer
+{
+    background-color: #102b46;
+    color: #d9e8f7;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+footer p
+{
+    font-size: 14px;
+    margin: 0;
+}
+
+/*CELULAR*/
+@media (max-width: 600px)
+{
+    header
+    {
+        padding: 25px 15px;
+    }
+
+    header h1 
+    {
+        font-size: 24px;
+    }
+
+    nav 
+    {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav button 
+    {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    main 
+    {
+        padding: 25px 15px;
+    }
+
+    main h2 
+    {
+        font-size: 22px;
+    }
+
+    .controlesExplorar
+    {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controlesExplorar input, .controlesExplorar select 
+    {
+        width: 100%;
+        max-width: 0;
+    }
+
+    footer 
+    {
+        padding: 18px 12px;
+    }
+}
