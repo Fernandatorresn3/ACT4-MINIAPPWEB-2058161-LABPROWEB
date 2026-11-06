@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="encabezado">
+            <h1>EXPLORA TU MUNDO</h1>
+            <P>Descubre paises y sus caracteristicas</P>
+        </div>
+
+        <nav>
+            <button id="bExplorar" class="activo">Explorar paises</button>
+            <button id="bFavoritos">Mis favoritos</button>
+            <button id="bComparar">Comparar paises</button>
+        </nav>
+
+        <!--CONTENIDO-->
+        <main>
+            <section id="explorar">
+                <h2>Explora los paises del mundo</h2>
+                <p>Encuentra informacion de diferentes paises</p>
+
+                <div class="controlesExplorar">
+                    <input type="text" id="buscarPais" placeholder="Introduce el nombre del pais">
+
+                    <select id="filtroContinente">
+                        <option value="Todos">Todos los continentes</option>
+                        <option value="America">America</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europa">Europa</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+
+                    <select id="ordenarPaises">
+                        <option value="az">A - Z</option>
+                        <option value="za">Z - A</option>
+                    </select>
+                </div>
+
+                    <!--CONTADOR-->
+                    <p id="contadorPaises">Paises encontrados:</p>
+                    <div id="contenedorPaises"></div>
+            </section>
+
+            <!--DETALLES PAIS-->
+            <section id="detallesPais" hidden>
+                <h2>Informacion del pais</h2>
+                <div id="contenedorDetalles"></div>
+
+                <button id="bRegresarExplorar">Regresar a explorar</button>
+            </section>
+
+            <!--FAVORITOS-->
+            <section id="favoritos" hidden>
+                <h2>Paises favoritos</h2>
+                <p>Consulta los paises guardados</p>
+                <div id="contenedorFavoritos"></div>
+            </section>
+
+            <!--COMPARAR PAISES-->
+            <section id="comparar" hidden>
+                <h2>Compara paises</h2>
+                <p>Selecciona dos paises para conocer sus diferencias.</p>
+                <div class="controlesComparar">
+                    <div class="campoComparar">
+                        <label for="paisUno">Primer pais:</label>
+                        <select id="paisUno">
+                            <option value="">Selecciona un pais</option>
+                        </select>
+                    </div>
+
+                    <div class="campoComparar">
+                        <label for="paisDos">Segundo pais:</label>
+                        <select id="paisDos">
+                            <option value="">Selecciona un país</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="bRealizarComparacion"> Comparar paises</button>
+
+                <div id="resultadoComparacion"></div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p> Actividad 4 2058161</p>
+        </footer>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
