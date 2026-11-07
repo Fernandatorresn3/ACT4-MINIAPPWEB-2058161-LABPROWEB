@@ -3,6 +3,7 @@ const explorar = document.getElementById("explorar");
 const detallesPais = document.getElementById("detallesPais");
 const favoritos = document.getElementById("favoritos");
 const comparar = document.getElementById("comparar");
+const mensajeCarga = document.getElementById("mensajeCarga");
 
 /*NAVEGACION*/
 const bExplorar = document.getElementById("bExplorar");
@@ -47,6 +48,10 @@ let visitaAnterior = null;
  {
     try 
     {
+
+        mensajeCarga.hidden = false;
+        contenedorPais.innerHTML = "";
+
         let desplazamiento = 0;
         let hayMasPaises = true;
         while (hayMasPaises)
@@ -79,12 +84,14 @@ let visitaAnterior = null;
         }
 
         console.log("Paises cargados:", paises.length);
+        mensajeCarga.hidden = true;
 
         document.getElementById("contadorPaises").textContent = `Paises encontrados: ${paises.length}`;
         filtrarPaises();
     
     } catch (error)
     {
+        mensajeCarga.hidden = true;
         console.error("Error al cargar los paises:", error);
         contenedorPais.innerHTML = "<p>No se pudieron cargar los paises</p>";
     }

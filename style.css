@@ -196,6 +196,16 @@ main section > p
     line-height: 1.5;
 }
 
+/*CARGA DE PAISES*/
+#mensajeCarga
+{
+    color: #1769aa;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
 /*VER DETALLES*/
 .bVerDetalles
 {
