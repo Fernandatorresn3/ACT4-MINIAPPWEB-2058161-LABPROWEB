@@ -646,5 +646,23 @@ footer p
         height: 45px;
     }
 
+    .detallePais
+    {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    .banderaDetalle
+    {
+        width: 100%;
+        max-width: 250px;
+        height: 150px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
 
 }
