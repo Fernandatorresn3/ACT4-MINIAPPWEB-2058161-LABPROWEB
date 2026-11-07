@@ -71,7 +71,7 @@ Devuelve datos en formato JSON, la información principal esta em data.objects y
 ### Inicio Explora Países
 ![Página principal](Imagenes/IEP.png)
 ### Inicio ordena por continente 
-![Página principal](Imagenes/IEC.pgn)
+![Página principal](Imagenes/IEC.png)
 ### Inicio ordena por contiente y orden alfábetico
 ![Página principal](Imagenes/IECO.png)
 ### Ver detalle 
