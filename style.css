@@ -299,6 +299,222 @@ main section > p
 {
     background-color: #e69b13;
 }
+
+/*BANDERAS*/
+.banderaComparacion
+{
+    width: 90px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 5px auto;
+}
+
+/* SECCION COMPARAR PAISES */
+
+.controlesComparar
+{
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.controlesComparar label
+{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #102b46;
+}
+
+#buscarComparar
+{
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 15px;
+    border: 1px solid #d1dfed;
+    border-radius: 8px;
+    background-color: #F2F6FA;
+    color: #26364a;
+    font-size: 14px;
+    outline: none;
+}
+
+#buscarComparar:focus
+{
+    border-color: #1769aa;
+    background-color: #ffffff;
+}
+
+/* RESULTADOS DE BUSQUEDA */
+
+#resultadosBusqueda
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#resultadosBusqueda button
+{
+    background-color: #E5EFFB;
+    color: #183D67;
+    border: 1px solid #d1dfed;
+    padding: 9px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#resultadosBusqueda button:hover
+{
+    background-color: #1769aa;
+    color: #ffffff;
+}
+
+/* PAISES SELECCIONADOS */
+
+#paisesSeleccionados
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px 0 20px;
+}
+
+#paisesSeleccionados div
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #E5EFFB;
+    color: #183D67;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #d1dfed;
+}
+
+.bQuitarPais
+{
+    background-color: #ffffff;
+    color: #b33b3b;
+    border: 1px solid #e5bcbc;
+    padding: 5px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.bQuitarPais:hover
+{
+    background-color: #b33b3b;
+    color: #ffffff;
+}
+
+/* BOTON COMPARAR */
+
+#bRealizarComparacion
+{
+    display: block;
+    margin: 20px auto;
+    background-color: #1769aa;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#bRealizarComparacion:hover
+{
+    background-color: #102b46;
+}
+
+/* TABLA DE COMPARACION */
+
+#resultadoComparacion
+{
+    margin: 30px auto;
+    max-width: 1200px;
+    overflow-x: auto;
+}
+
+#resultadoComparacion h3
+{
+    color: #102b46;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+#resultadoComparacion table
+{
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+#resultadoComparacion th,
+#resultadoComparacion td
+{
+    padding: 14px 16px;
+    border: 1px solid #E5EFFB;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#resultadoComparacion thead th
+{
+    background-color: #F4B66A;
+    color: #102B46;
+    font-size: 15px;
+}
+
+#resultadoComparacion tbody th
+{
+    background-color: #FFE28B;
+    color: #102b46;
+    text-align: left;
+}
+
+#resultadoComparacion tbody td
+{
+    background-color: #FFF7EC;
+    color: #52647a;
+    font-size: 14px;
+    padding: 14px 16px;
+    border: 1px solid #F3DCC1;
+    text-align: center;
+}
+
+#resultadoComparacion tbody tr:nth-child(even)
+{
+    background-color: #Fcebd8;
+}
+
+
+
+/* BANDERAS DE LA TABLA */
+
+.banderaComparacion
+{
+    width: 90px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 5px auto;
+}
+
 /*FOOTET*/
 footer
 {
@@ -372,4 +588,40 @@ footer p
     {
         padding: 18px 12px;
     }
+
+    .controlesComparar
+    {
+        padding: 18px;
+    }
+
+    #buscarComparar
+    {
+        width: 100%;
+    }
+
+    #resultadoComparacion
+    {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    #resultadoComparacion table
+    {
+        min-width: 600px;
+    }
+
+    #resultadoComparacion th,
+    #resultadoComparacion td
+    {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .banderaComparacion
+    {
+        width: 65px;
+        height: 45px;
+    }
+
+
 }

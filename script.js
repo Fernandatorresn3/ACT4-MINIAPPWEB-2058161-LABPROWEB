@@ -21,9 +21,12 @@ const contenedorFavoritos = document.getElementById("contenedorFavoritos");
 const resultadoComparacion = document.getElementById("resultadoComparacion");
 
 /*COMPARACION*/
-const paisUno = document.getElementById("paisUno");
-const paisDos = document.getElementById("paisDos");
+const buscarComparar = document.getElementById("buscarComparar");
+const resultadosBusqueda = document.getElementById("resultadosBusqueda");
+const paisesSeleccionados = document.getElementById("paisesSeleccionados");
 const bRealizarComparacion = document.getElementById("bRealizarComparacion");
+
+let listaComparacion = [];
 
 const bRegresarExplorar = document.getElementById("bRegresarExplorar");
 
@@ -212,6 +215,132 @@ let visitaAnterior = null;
     });
  }
 
+ /*PAISES PARA COMPARAR*/
+ function buscarPaisesComparar()
+ {
+    const texto = buscarComparar.value.toLowerCase().trim();
+    resultadosBusqueda.innerHTML = "";
+    if (texto === "")
+    {
+        return;
+    }
+
+    const resultados = paises.filter(pais => pais.names.common.toLowerCase().includes(texto) && !listaComparacion.some(p => p.codes.alpha_2 === pais.codes.alpha_2));
+
+    if (resultados.length === 0)
+    {
+        resultadosBusqueda.innerHTML = "<p>No se encontraron paises.</p>";
+        return;
+    }
+
+    resultados.slice(0, 10).forEach(pais =>
+    {
+        const boton = document.createElement("button");
+        boton.textContent = pais.names.common;
+        boton.addEventListener("click", () =>
+        {
+            agregarPaisComparar(pais);
+        });
+
+        resultadosBusqueda.appendChild(boton);
+    });
+ }
+
+ /*PAIS A COMPARAR*/
+ function agregarPaisComparar(pais)
+ {
+    if (listaComparacion.length >= 6)
+    {
+        alert("El máximo de paises a comparar es 6.");
+        return;
+    }
+
+    listaComparacion.push(pais);
+    buscarComparar.value = "";
+    resultadosBusqueda.innerHTML = "";
+
+    mostrarPaisesSeleccionados();
+ }
+
+ /*PAISES SELECCIONADOS*/
+ function mostrarPaisesSeleccionados()
+ {
+    paisesSeleccionados.innerHTML = "";
+    listaComparacion.forEach(pais =>
+    {
+        const elemento = document.createElement("div");
+
+        elemento.innerHTML = `<span>${pais.names.common}</span>
+        <button class="bQuitarPais">Quitar</button> `;
+
+        elemento.querySelector(".bQuitarPais").addEventListener("click", () =>
+        {
+            listaComparacion = listaComparacion.filter
+            (p => p.codes.alpha_2 !== pais.codes.alpha_2);
+
+            mostrarPaisesSeleccionados();
+        });
+
+        paisesSeleccionados.appendChild(elemento);
+    });
+ }
+
+ buscarComparar.addEventListener("input", buscarPaisesComparar);
+
+ /*COMPARACION*/
+function compararPaises()
+{
+    if (listaComparacion.length < 2)
+    {
+        alert("Selecciona al menos 2 paises para comparar.");
+        return;
+    }
+
+    const caracteristicas = [
+        { nombre: "Nombre oficial", obtener: p => p.names.official || "No disponible" },
+        { nombre: "Capital", obtener: p => p.capitals?.[0]?.name || "No disponible" },
+        { nombre: "Continente", obtener: p => p.region || "No disponible" },
+        { nombre: "Poblacion", obtener: p => p.population?.toLocaleString("es-MX") || "No disponible" },
+        { nombre: "Superficie", obtener: p => p.area?.kilometers?.toLocaleString("es-MX") || "No disponible" },
+        { nombre: "Moneda", obtener: p => p.currencies?.map(m => m.name).join(", ") || "No disponible" },
+        { nombre: "Idiomas", obtener: p => p.languages?.map(i => i.name).join(", ") || "No disponible" },
+        { nombre: "Zonas horarias", obtener: p => p.timezones?.join(", ") || "No disponible" }
+    ];
+
+    let tabla = `
+        <h3>Resultado de la comparacion</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Caracteristica</th>
+                    ${listaComparacion.map(p => `<th><img src="${p.flag?.url_png || ""}" class="banderaComparacion"><br>${p.names.common}</th>`).join("")}
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    caracteristicas.forEach(caracteristica =>
+    {
+        tabla += `<tr><th>${caracteristica.nombre}</th>`;
+
+        listaComparacion.forEach(pais =>
+        {
+            tabla += `<td>${caracteristica.obtener(pais)}</td>`;
+        });
+
+        tabla += "</tr>";
+    });
+
+    tabla += `
+            </tbody>
+        </table>
+    `;
+
+    resultadoComparacion.innerHTML = tabla;
+}
+
+/* BOTON COMPARAR */
+bRealizarComparacion.addEventListener("click", compararPaises);
  /*BUSQUEDA, FILTRO Y ORDENAMIENTM*/
  function filtrarPaises()
  {
@@ -365,6 +494,18 @@ bFavoritos.addEventListener("click", () =>
     actualizarBotonActivo(bFavoritos);
 
     mostrarFavoritos();
+    window.scrollTo(0, 0);
+});
+
+/*COMPARAR*/
+bComparar.addEventListener("click", () => 
+{
+    explorar.hidden = true;
+    detallesPais.hidden = true;
+    favoritos.hidden = true;
+    comparar.hidden = false;
+
+    actualizarBotonActivo(bComparar);
     window.scrollTo(0, 0);
 });
 

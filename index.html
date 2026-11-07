@@ -70,24 +70,15 @@
                 <h2>Compara paises</h2>
                 <p>Selecciona dos paises para conocer sus diferencias.</p>
                 <div class="controlesComparar">
-                    <div class="campoComparar">
-                        <label for="paisUno">Primer pais:</label>
-                        <select id="paisUno">
-                            <option value="">Selecciona un pais</option>
-                        </select>
+                    <label for="buscarComparar">Buscar país:</label>
+                    <input type="text" id="buscarComparar" placeholder="Escribe el nombre del pais">
+                    <div id="resultadosBusqueda"></div>
+                    <h3>Paises seleccionados:</h3>
+                    <div id="paisesSeleccionados"></div>
                     </div>
 
-                    <div class="campoComparar">
-                        <label for="paisDos">Segundo pais:</label>
-                        <select id="paisDos">
-                            <option value="">Selecciona un país</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button id="bRealizarComparacion"> Comparar paises</button>
-
-                <div id="resultadoComparacion"></div>
+                    <button id="bRealizarComparacion">Comparar paises</button>
+                    <div id="resultadoComparacion"></div>
             </section>
         </main>
 
