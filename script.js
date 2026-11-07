@@ -423,7 +423,7 @@ bRealizarComparacion.addEventListener("click", compararPaises);
     const bandera = pais.flag?.url_png || "";
 
     contenedorDetalles.innerHTML = `<div class="detallePais">
-    <img src="${bandera}">
+    <img src="${bandera}" class="banderaDetalle">
     <h2>${pais.names.common}</h2>
     <p><strong>Nombre oficial:</strong> ${pais.names.official}</p>
     <p><strong>Capital:</strong> ${capital}</p>

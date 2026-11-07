@@ -243,6 +243,19 @@ main section > p
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* BANDERA EN VER DETALLES */
+.banderaDetalle
+{
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 25px;
+    border-radius: 8px;
+}
+
+
 .detallePais h2
 {
     margin-bottom: 20px;
